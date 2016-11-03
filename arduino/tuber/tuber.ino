@@ -1,5 +1,6 @@
 #define CONTAINER_ID 1
 #define CONTAINER_HEIGHT 40.0 /*altura del contenedor*/
+#define DELAY 1000 /*1 segundo*/
 
 #define LED 13  
 #define TRIG1 9 
@@ -64,7 +65,7 @@ int getContainerLoad() {
 void sendAsJSON(int load) {
     Serial.print("{\"id\":");
     Serial.print(CONTAINER_ID);
-    Serial.print(",\"load\":");
+    Serial.print(",\"llenado\":");
     Serial.print(load);
     Serial.println("}");
 }
@@ -82,5 +83,5 @@ void loop(){
         sendAsJSON(load);
     }
 
-    delay(3000);
+    delay(DELAY);
 }
